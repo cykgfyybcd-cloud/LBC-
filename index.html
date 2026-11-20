@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 /* Palette du logo : rouge cire, cuivre, vert très sombre, crème */
-:root{--bg:#F3EBD8;--bg2:#E9DEC4;--card:#FAF5E8;--tx:#14201a;--mu:#6a6450;--ln:#D4C6A4;--ac:#7d1022;--gold:#a8692f;--cork:#DCCBA3;--stage:#DCCBA3;--vert:#06180f;--btn:#7d1022;--on-btn:#F6EBCB;--s-cons:#56666e;--s-surv:#8d6a1c;--s-boire:#2f6b4f;--s-pleine:#7d1022;--s-apres:#9a4529;--s-nd:#7a725f;--serif:"EB Garamond","Cormorant Garamond",Garamond,"Times New Roman",serif;--sans:"Hanken Grotesk",-apple-system,"Helvetica Neue",Arial,sans-serif;--paper:none;--wood:none;color-scheme:light}
+:root{--bg:#F2EAE0;--bg2:#E7DAC9;--card:#FAF6F0;--tx:#14201a;--mu:#6b5f52;--ln:#D6C5AE;--ac:#7d1022;--gold:#a8692f;--cork:#C2A07A;--stage:#C2A07A;--vert:#06180f;--btn:#7d1022;--on-btn:#F6EBCB;--s-cons:#56666e;--s-surv:#8d6a1c;--s-boire:#2f6b4f;--s-pleine:#7d1022;--s-apres:#9a4529;--s-nd:#7a725f;--serif:"EB Garamond","Cormorant Garamond",Garamond,"Times New Roman",serif;--sans:"Hanken Grotesk",-apple-system,"Helvetica Neue",Arial,sans-serif;--paper:none;--wood:none;color-scheme:light}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#06160e;--bg2:#0c2418;--card:#0e281b;--tx:#F4E8C8;--mu:#a9b39c;--ln:#1f3d2d;--ac:#D9985A;--gold:#C98A4B;--btn:#8C1224;--on-btn:#F6EBCB;--s-cons:#9fb2ba;--s-surv:#d4ae5c;--s-boire:#7fc19c;--s-pleine:#e8a0a8;--s-apres:#e8906f;--s-nd:#9a927f;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#06160e;--bg2:#0c2418;--card:#0e281b;--tx:#F4E8C8;--mu:#a9b39c;--ln:#1f3d2d;--ac:#D9985A;--gold:#C98A4B;--btn:#8C1224;--on-btn:#F6EBCB;--s-cons:#9fb2ba;--s-surv:#d4ae5c;--s-boire:#7fc19c;--s-pleine:#e8a0a8;--s-apres:#e8906f;--s-nd:#9a927f;color-scheme:dark}
 *{box-sizing:border-box}html,body{margin:0}
@@ -169,6 +169,121 @@ dd .src{display:block;font-size:12.5px;color:var(--mu)}
  .sheet .actions{left:0;flex-wrap:nowrap;overflow-x:auto;padding-left:16px}.actions .btn{flex:none;white-space:nowrap}.ppl{min-height:0;padding:64px 20px 24px;gap:12px}.stage{flex:none;height:300px;min-height:0;width:100%}.entry{grid-template-columns:70px 1fr}
  .modal{padding-left:8px;padding-right:8px}.mbox{padding:18px}.hunt{grid-template-columns:1fr}.cols{gap:20px}
 }
+
+/* ===== Version bulles : tout est arrondi, doux, tactile ===== */
+:root{--r:22px;--r2:14px}
+.btn{border-radius:99px;padding-inline:26px}
+.btn.big,.enter{border-radius:99px}
+.seg{border:0;background:var(--bg2);border-radius:99px;padding:4px;gap:2px;overflow:visible}
+.seg button{border-radius:99px;padding:10px 18px;min-height:42px;transition:background .25s,color .25s}
+.seg button.on{box-shadow:0 4px 10px -4px #0006}
+.tabs{gap:6px;padding:4px 0}
+.tabs button{border:0;border-radius:99px;padding:10px 18px;min-height:44px;transition:background .25s,color .25s}
+.tabs button:hover{background:var(--bg2)}
+.tabs button.on{background:var(--btn);color:var(--on-btn);border:0}
+.top .gs,input[type=search]{border-radius:99px;padding-inline:18px}
+input[type=text],input[type=date],input[type=number],select,textarea{border-radius:var(--r2)}
+.card,.filters,.tile,.dash,.entry,.mbox,.sec{border-radius:var(--r)}
+.filters{overflow:hidden}.filters summary{padding-inline:22px}
+.tile{overflow:hidden}
+.tile .tv,.tv{border-radius:var(--r) var(--r) 0 0}
+.mbox{border-radius:28px;border-color:var(--ln)}
+.stage{border-radius:28px}
+.ppl{border-radius:0 0 34px 0}
+.ppr section{background:var(--card);border:1px solid var(--ln);border-radius:var(--r);padding:20px 24px 14px}
+.ppr h4{border-bottom:0;font-size:20px;padding-bottom:2px}
+.actions{border-radius:26px 26px 0 0}
+.entry{background:var(--card);border:1px solid var(--ln);border-top:1px solid var(--ln);padding:20px 24px;margin-bottom:12px;transition:transform .3s,box-shadow .3s}
+.entry:hover{transform:translateY(-2px);box-shadow:0 14px 26px -20px #000a}
+.tag,.pill{border-radius:99px}
+.btabs{border-radius:26px 26px 0 0}
+.btabs button{border-radius:99px}
+.qf button{border-radius:99px}
+.gauge,.gauge i{border-radius:99px}
+.note{border-radius:var(--r2)}
+.landing .dash{border:1px solid #C98A4B44;border-radius:var(--r);overflow:hidden}
+
+/* pastilles de choix (verdict, accords...) */
+.bub{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid var(--gold);background:var(--card);color:var(--tx);padding:10px 18px;min-height:44px;font:500 14.5px var(--sans);cursor:pointer;transition:background .25s,color .25s,transform .2s}
+.pill:active{transform:scale(.97)}
+.pill.on{background:var(--btn);border-color:var(--btn);color:var(--on-btn)}
+.pill.yes.on{background:#2f6b44;border-color:#2f6b44;color:#fff}
+.pill.no.on{background:#8a2a2a;border-color:#8a2a2a;color:#fff}
+.vd{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:99px;font:500 14px var(--sans);border:1px solid var(--ln);background:var(--bg2);color:var(--tx);white-space:nowrap}
+.vd.yes{background:#2f6b4422;border-color:#2f6b44;color:#2f6b44}.vd.no{background:#8a2a2a22;border-color:#8a2a2a;color:#8a2a2a}.vd.mid{background:#C98A4B22;border-color:var(--gold);color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .vd.yes{color:#7fcf9a;border-color:#7fcf9a}:root:not([data-theme="light"]) .vd.no{color:#f0908a;border-color:#f0908a}}
+:root[data-theme="dark"] .vd.yes{color:#7fcf9a;border-color:#7fcf9a}:root[data-theme="dark"] .vd.no{color:#f0908a;border-color:#f0908a}
+.avis{margin-top:22px;background:var(--card);border:1px solid var(--gold);border-radius:var(--r);padding:20px 24px;display:grid;gap:10px}
+.avis h4{margin:0;border:0;font-size:20px}.avis .row{align-items:center}.avis q{font:italic 400 19px/1.45 var(--serif);color:var(--tx);quotes:"« " " »"}
+.avis .empty{color:var(--mu)}
+.tsec{display:grid;gap:10px;margin-top:10px}
+.tmini{display:flex;gap:14px;align-items:center;padding:14px 18px;border:1px solid var(--ln);border-radius:var(--r2);background:var(--bg);cursor:pointer}
+.tmini b{font:500 26px var(--serif);color:var(--ac);min-width:56px;text-align:center}.tmini small{color:var(--mu);display:block}
+.tmini .grow{flex:1;min-width:0}
+.tfoot-note{font-size:13px;color:var(--mu);margin:-6px 0 14px}
+.subtle{font:500 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:22px 0 8px;grid-column:1/-1}
+
+/* ===== passe 2 : plus rien de carré ===== */
+.years{border:0;background:var(--bg2);border-radius:99px;padding:5px;gap:4px}
+.years button{border-radius:99px;border:0}
+.years button.on{box-shadow:0 4px 10px -4px #0006}
+.chip{border-radius:99px;padding-inline:16px}
+.mini,.hcard,.banner,.cam,.msg,.kpis,.rack,.stat,.stat>div,.hc,.tw{border-radius:var(--r)}
+.msg{border-radius:22px}
+.cam{border-radius:var(--r)}.cam img,.ph-row img,.out img,.tile img,.entry img{border-radius:var(--r2)}
+.tpl button{border-radius:99px;padding-inline:22px}
+.tpl button.on{background:var(--btn);color:var(--on-btn);border-color:var(--btn)}
+.kpis{overflow:hidden;border:1px solid var(--ln);background:var(--card)}
+.rack{overflow:hidden}
+.fic{border-radius:99px;padding:3px 12px}
+.toast{border-radius:99px;padding-inline:22px}
+.gb,.vbar,.bars .bb{border-radius:99px;overflow:hidden}
+.gantt td,.gantt th{border-radius:6px}
+.gantt i,.gantt b,.gantt .bar,.gantt td>*{border-radius:99px}
+.lt tr[data-act]:hover td:first-child{border-radius:14px 0 0 14px}.lt tr[data-act]:hover td:last-child{border-radius:0 14px 14px 0}
+.verdict{border-radius:var(--r2)}
+.dash>div{border-radius:0}
+.tile .score,.big-score{border-radius:50%}
+.btn.sm{border-radius:99px}
+details>summary{border-radius:var(--r)}
+select{border-radius:99px;padding-inline:16px}
+input[type=file]{border-radius:99px}
+.top{border-radius:0 0 22px 22px}
+.sheet .x,.pp .x{border-radius:99px;padding-inline:18px}
+.tl,.entry .d{border-radius:var(--r2)}
+.modal .mfoot .btn,.mbox .btn{border-radius:99px}
+.mbox fieldset{border-radius:var(--r)}
+.x{border-radius:99px}
+.mini b,.mini .bt,.mini span{white-space:nowrap}
+.wrap>.sec{background:var(--card);border:1px solid var(--ln);border-radius:var(--r);padding:20px 24px;margin-top:18px}.sec>h2{border-bottom:0;padding-bottom:0}
+
+/* photo réelle : toujours entière, centrée, à l'échelle */
+.stage{overflow:hidden}
+.stage img.ph{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:center;border-radius:22px;box-shadow:none}
+@media (max-width:900px){.stage:has(img.ph){height:min(64vh,520px)}}
+.tv img.ph{object-fit:cover;object-position:50% 42%}
+.tv img.ph{object-fit:contain;object-position:center;padding:6px}
+
+/* photo réelle intégrée : fond flouté ambiant + cadre arrondi qui épouse la photo */
+.phbg{position:absolute;left:-24px;top:-24px;width:calc(100% + 48px);height:calc(100% + 48px);max-width:none;object-fit:cover;filter:blur(24px) saturate(1.15) brightness(.82);z-index:0;pointer-events:none}
+.phf{position:absolute;inset:16px;display:flex;align-items:center;justify-content:center;z-index:1}
+.stage .phf img.ph,.tv .phf img.ph{position:static;inset:auto;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;padding:0;border-radius:20px;box-shadow:0 26px 40px -18px #000c,0 0 0 1px #ffffff33,0 0 0 6px #ffffff14}
+.tv .phf{inset:14px 14px 18px}
+.tv .phf img.ph{border-radius:16px;box-shadow:0 18px 26px -14px #000c,0 0 0 1px #ffffff33}
+.stage:has(.phf){background:#2a2018}
+.tv{position:relative;overflow:hidden}
+.tv:has(.phf){background:#2a2018}
+.fic,.score,.tv .score{z-index:3}
+#bform .auto{background:#C98A4B26;border-color:var(--gold)}
+#camprev img{max-height:200px;border-radius:var(--r2);display:block;margin:6px 0}
+#recmsg{margin-top:6px}
+.aibar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 18px;padding:12px 14px;border-radius:var(--r2);background:var(--bg2)}
+#bform .est{border-style:dashed;border-color:var(--gold);background:#a8692f14}
+.aibar .src{flex:1;min-width:200px}
+.iglink{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:99px;border:1px solid var(--gold);color:var(--tx);text-decoration:none;font:500 14px var(--sans);min-height:44px}
+.iglink:hover{background:var(--bg2)}
+.iglink.onland{color:#F4E8C8;border-color:#C98A4B88;margin:16px auto 0;display:flex;width:max-content;max-width:100%}.iglink.onland:hover{background:#C98A4B22}
 </style></head><body><div id="landing" class="landing" role="region" aria-label="Accueil"></div><div id="app"></div><div id="sheet" class="sheet" aria-label="Fiche bouteille"></div><div id="modal" class="modal"></div><div id="toast" class="toast" role="status"></div>
 <script src="config.js"></script>
 <script>
@@ -176,6 +291,13 @@ const LOGO='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVQAAAFUCAYAAAB7ksS1AA
 'use strict';
 /* LBC — La Cave Privée · LIÈGE & BONS COPAINS */
 const AI_ENDPOINT=(window.LBC_CONFIG||{}).AI_ENDPOINT||'';
+const IG=(()=>{const v=String((window.LBC_CONFIG||{}).INSTAGRAM||'').trim();if(!v)return'';return/^https?:/.test(v)?v:'https://www.instagram.com/'+v.replace(/^@/,'').replace(/\/$/,'')+'/'})();
+const IGICO='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>';
+const igLink=cls=>IG?`<a class="iglink ${cls||''}" href="${esc(IG)}" target="_blank" rel="noopener">${IGICO}<span>Suivre Liège &amp; Bons Copains sur Instagram</span></a>`:'';
+async function aiFetch(body){const code=((typeof S!=='undefined'&&S&&S.settings&&S.settings.aiCode)||'').trim();const r=await fetch(AI_ENDPOINT,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(Object.assign({},body,{code}))});
+ if(r.status===401){toast(code?'Code d’accès refusé. Vérifiez-le dans Réglages.':'Code d’accès requis : saisissez-le dans Réglages.');throw new Error('code')}
+ if(r.status===429){toast('Limite quotidienne atteinte pour votre code. Réessayez demain.');throw new Error('limite')}
+ return r}
 const YEAR=new Date().getFullYear();
 const iso=d=>{const z=new Date(d.getTime()-d.getTimezoneOffset()*6e4);return z.toISOString().slice(0,10)};
 const TODAY=iso(new Date());
@@ -216,21 +338,14 @@ function resize(file,max=1000){return new Promise((res,rej)=>{const fr=new FileR
 const d2b=u=>{const [h,b]=u.split(',');const m=/:(.*?);/.exec(h)[1],a=atob(b),n=new Uint8Array(a.length);for(let i=0;i<a.length;i++)n[i]=a.charCodeAt(i);return new Blob([n],{type:m})};
 
 /* ---------- données de démonstration (fictives) ---------- */
+const demoTasting=()=>({id:uid(),fictive:true,date:'2026-09-14',snap:{domaine:'Château des Cèdres',cuvee:'Grand vin',appellation:'Pauillac',millesime:2010,couleur:'rouge'},occasion:'Dîner d’exemple',personnes:'Amis (fictif)',plat:'Côte de bœuf',temp:'17 °C',aeration:'Carafé 1 h avant',note:90,rachat:'Je rachète',prixjuge:'Prix correct',aromes:'Cassis, cèdre',texte:'Exemple de fiche de dégustation : notez ici ce que vous avez pensé du vin pour le retrouver plus tard.'});
+function trimDemo(){if(S.demoTrim)return;S.demoTrim=1;const fic=S.bottles.filter(b=>b.fictive);if(fic.length>1){const keep=fic.find(b=>b.domaine==='Château des Cèdres')||fic[0];S.bottles=S.bottles.filter(b=>!b.fictive||b===keep);S.tastings=S.tastings.filter(t=>!t.fictive);S.snaps=S.snaps.filter(x=>!x.fictive);S.tastings.push(demoTasting());try{touchSnap()}catch(e){}save()}}
 function seedDemo(){
  const d='2026-11-01',src='Donnée fictive de démonstration';
  const mk=(o,v)=>S.bottles.push(Object.assign({id:uid(),fictive:true,format:'75 cl',provenance:'Exemple fictif',val:{marchand:{v,date:d,src}},hist:[{date:'2025-11-01',v:Math.round(v*.88),src},{date:'2026-05-01',v:Math.round(v*.94),src},{date:d,v,src}]},o));
- mk({domaine:'Domaine des Trois Chênes',cuvee:'Clos de l’Exemple',appellation:'Gevrey-Chambertin 1er Cru',millesime:2018,region:'Bourgogne',couleur:'rouge',quantite:6,prixAchat:95,dateAchat:'2021-04-12',gardeFrom:2026,gardeTo:2042,apogee:2033,cepages:'Pinot noir',classification:'Premier Cru',terroir:'Calcaires et marnes de la Côte de Nuits',emplacement:'Casier B2',aromes:'Cerise noire, violette, sous-bois',structure:'Tendue et fine',tanins:'Soyeux'},128);
- mk({domaine:'Château des Cèdres',cuvee:'Grand vin',appellation:'Pauillac',millesime:2010,region:'Bordeaux',couleur:'rouge',quantite:3,prixAchat:140,dateAchat:'2016-06-02',gardeFrom:2020,gardeTo:2045,apogee:2027,cepages:'Cabernet-sauvignon, merlot',classification:'Cru classé',emplacement:'Casier A1'},190);
- mk({domaine:'Maison Lemoine-Exemple',cuvee:'Blanc de blancs brut',appellation:'Champagne',millesime:2012,region:'Champagne',couleur:'effervescent',quantite:4,prixAchat:85,gardeFrom:2020,gardeTo:2030,apogee:2026,cepages:'Chardonnay',emplacement:'Frigo à vin · tiroir 1'},110);
- mk({domaine:'Domaine du Val Fictif',cuvee:'Les Perrières',appellation:'Meursault 1er Cru',millesime:2019,region:'Bourgogne',couleur:'blanc',quantite:6,prixAchat:70,gardeFrom:2024,gardeTo:2034,apogee:2029,cepages:'Chardonnay',emplacement:'Casier B4'},82);
- mk({domaine:'Domaine de la Roche Imaginaire',cuvee:'Cuvée Exemple',appellation:'Hermitage',millesime:2016,region:'Rhône',couleur:'rouge',quantite:4,prixAchat:120,gardeFrom:2024,gardeTo:2046,apogee:2034,cepages:'Syrah',emplacement:'Casier C1'},150);
- mk({domaine:'Château de l’Or Fictif',cuvee:'',appellation:'Sauternes',millesime:2009,region:'Bordeaux',couleur:'liquoreux',quantite:3,prixAchat:60,gardeFrom:2015,gardeTo:2040,apogee:2024,cepages:'Sémillon, sauvignon',emplacement:'Casier A3'},78);
- mk({domaine:'Domaine Imaginaire',cuvee:'Les Charmes',appellation:'Chambolle-Musigny',millesime:2005,region:'Bourgogne',couleur:'rouge',quantite:1,prixAchat:80,gardeFrom:2012,gardeTo:2025,apogee:2018,cepages:'Pinot noir',emplacement:'Casier B1'},95);
- mk({domaine:'Clos des Exemples',cuvee:'Vieilles vignes',appellation:'Châteauneuf-du-Pape',millesime:2020,region:'Rhône',couleur:'rouge',quantite:12,prixAchat:38,gardeFrom:2026,gardeTo:2040,cepages:'Grenache, syrah, mourvèdre',emplacement:'Casier C3'},44);
- mk({domaine:'Domaine Pierre-Exemple',cuvee:'Clos Fictif',appellation:'Pommard',millesime:2017,region:'Bourgogne',couleur:'rouge',quantite:1,format:'150 cl (magnum)',prixAchat:180,gardeFrom:2027,gardeTo:2045,apogee:2036,cepages:'Pinot noir',emplacement:'Casier D1 · magnums'},210);
- S.tastings.push({id:uid(),fictive:true,date:'2026-09-14',snap:{domaine:'Domaine du Val Fictif',cuvee:'Les Perrières',appellation:'Meursault 1er Cru',millesime:2019,couleur:'blanc'},occasion:'Dîner d’exemple',personnes:'Amis (fictif)',plat:'Saint-Jacques, beurre blanc',temp:'11 °C',aeration:'Ouvert 30 min avant',note:88,aromes:'Noisette, citron confit',texte:'Entrée de démonstration du carnet.'});
+ mk({domaine:'Château des Cèdres',cuvee:'Grand vin',appellation:'Pauillac',millesime:2010,region:'Bordeaux',couleur:'rouge',quantite:3,prixAchat:140,dateAchat:'2016-06-02',gardeFrom:2020,gardeTo:2045,apogee:2027,cepages:'Cabernet-sauvignon, merlot',classification:'Cru classé',terroir:'Graves profondes',emplacement:'Casier A1',aromes:'Cassis, cèdre, graphite',structure:'Ample et structurée',tanins:'Fondus'},190);
+ S.tastings.push(demoTasting());
  S.wishes.push({id:uid(),fictive:true,domaine:'Domaine Imaginaire',cuvee:'Les Amoureuses',appellation:'Chambolle-Musigny 1er Cru',millesime:2017,format:'75 cl',qte:1,prixDemande:140,prixMax:150,marche:165,marcheSrc:'Donnée fictive',revente:150,livraison:25,statut:'En négociation',lien:'',notes:'Entrée de démonstration.'});
- [['2025-05-01',.82],['2025-09-01',.88],['2026-01-01',.92],['2026-04-01',.96],['2026-08-01',.99]].forEach(([dt,k])=>S.snaps.push({date:dt,inv:3340,val:Math.round(4370*k),fictive:true}));
  S.demo=true;touchSnap();save()}
 
 /* ---------- logique métier ---------- */
@@ -276,7 +391,7 @@ function shape(b){const k=kind(b);if(k==='champ')return'ch';if(/rougeB|blancB|ro
 function bottleSVG(b,cls='',raster=false){const s=shape(b),g=GLASS[b.couleur]||GLASS.rouge,cap=CAPS[b.couleur]||CAPS.rouge,ch=s==='ch',lx=ch?4:5,lw=ch?26:24;
  const dom=String(b.domaine||'').toUpperCase().slice(0,22);
  return `<svg ${raster?'xmlns="http://www.w3.org/2000/svg" width="340" height="1000" ':''}class="bt ${cls}" viewBox="0 0 34 100" aria-hidden="true"><path d="${PATH[s]}" fill="${g}"/><rect x="${ch?13:14.5}" y="2" width="${ch?8:5}" height="12" fill="${cap}"/><path d="M${ch?4.5:5.5} 40v52" stroke="#fff" stroke-opacity=".12" stroke-width="1.6" fill="none"/><rect x="${lx}" y="57" width="${lw}" height="32" fill="#EFE6D3"/><rect x="${lx+1.6}" y="58.6" width="${lw-3.2}" height="28.8" fill="none" stroke="${cap}" stroke-width=".3"/><text x="17" y="66" text-anchor="middle" font-size="2.2" font-family="${raster?'Arial,sans-serif':'Hanken Grotesk,Arial,sans-serif'}" fill="#14201a" textLength="${Math.min(dom.length*1.5,lw-5).toFixed(1)}" lengthAdjust="spacingAndGlyphs">${esc(dom)}</text><path d="M12 69h10" stroke="${cap}" stroke-width=".25"/><text x="17" y="80.5" text-anchor="middle" font-size="7.2" font-family="${raster?'Georgia,serif':'EB Garamond,Garamond,serif'}" fill="${cap}">${esc(b.millesime||'')}</text></svg>`}
-const visual=b=>P[b.photo]?`<img class="ph" alt="${esc(b.domaine)}" src="${P[b.photo]}">`:bottleSVG(b);
+const visual=b=>P[b.photo]?`<img class="phbg" alt="" aria-hidden="true" src="${P[b.photo]}"><div class="phf"><img class="ph" alt="${esc(b.domaine)}" src="${P[b.photo]}"></div>`:bottleSVG(b);
 const WOODSVG=`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="60"><filter id="w" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".004 .2" numOctaves="3" seed="7"/><feColorMatrix values="0 0 0 0 .13 0 0 0 0 .07 0 0 0 0 .03 1.7 0 0 0 -.5"/></filter><rect width="600" height="60" filter="url(#w)"/></svg>`;
 const NOISESVG=`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .32 0 0 0 .55 -.08"/></filter><rect width="200" height="200" filter="url(#n)" opacity=".5"/></svg>`;
 const uri=s=>'url("data:image/svg+xml,'+encodeURIComponent(s)+'")';
@@ -306,7 +421,7 @@ const goTo=v=>{V=v;render()};
 
 /* ---------- accueil ---------- */
 function landing(){const s=stats(),d0=new Date().toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),d=d0.charAt(0).toUpperCase()+d0.slice(1);
- $('#landing').innerHTML=`<div class="lhead"><img class="seal" src="${LOGO}" alt="LBC"><div><h1>LIÈGE &amp; BONS COPAINS</h1><p>LA CAVE PRIVÉE</p></div><div class="ldate">${d}</div></div><div class="lmid">${shelfSVG()}</div><div><div class="dash"><div><small>Bouteilles</small><b>${s.n}</b></div><div><small>Valeur estimée</small><b>${eur(s.val)}</b>${s.unv?`<em>${s.unv} bt sans estimation</em>`:''}</div><div><small>Montant investi</small><b>${eur(s.inv)}</b></div><div><small>Plus-value latente</small><b>${s.base?(s.pv>=0?'+':'')+eur(s.pv):'—'}</b>${s.pvp!=null?`<em>${pc(s.pvp)}</em>`:''}</div><div><small>À leur apogée</small><b>${s.apo}</b></div><div><small>À conserver</small><b>${s.cons}</b></div></div><div class="lfoot"><p>${S.demo?'Collection de démonstration : toutes les bouteilles sont fictives. ':''}Le goût des belles choses.</p><button class="enter" data-act="enter">Entrer dans ma cave</button></div></div>`;
+ $('#landing').innerHTML=`<div class="lhead"><img class="seal" src="${LOGO}" alt="LBC"><div><h1>LIÈGE &amp; BONS COPAINS</h1><p>LA CAVE PRIVÉE</p></div><div class="ldate">${d}</div></div><div class="lmid">${shelfSVG()}</div><div><div class="dash"><div><small>Bouteilles</small><b>${s.n}</b></div><div><small>Valeur estimée</small><b>${eur(s.val)}</b>${s.unv?`<em>${s.unv} bt sans estimation</em>`:''}</div><div><small>Montant investi</small><b>${eur(s.inv)}</b></div><div><small>Plus-value latente</small><b>${s.base?(s.pv>=0?'+':'')+eur(s.pv):'—'}</b>${s.pvp!=null?`<em>${pc(s.pvp)}</em>`:''}</div><div><small>À leur apogée</small><b>${s.apo}</b></div><div><small>À conserver</small><b>${s.cons}</b></div></div><div class="lfoot"><p>${S.demo?'Collection de démonstration : toutes les bouteilles sont fictives. ':''}Le goût des belles choses.</p><button class="enter" data-act="enter">Entrer dans ma cave</button></div>${igLink('onland')}</div>`;
  $('#landing').classList.remove('leave');$('#landing').hidden=false}
 
 /* ---------- collection ---------- */
@@ -322,7 +437,11 @@ function vCollection(){return `<div class="wrap"><div id="rem"></div><div class=
 function fb(){const c=CF;return S.bottles.filter(b=>{if(c.q&&!norm([b.domaine,b.cuvee,b.appellation,b.millesime,b.region,b.emplacement,b.cepages,b.couleur].join(' ')).includes(norm(c.q)))return false;
  for(const k of ['region','appellation','domaine','millesime','couleur'])if(c[k]!==''&&String(b[k])!==String(c[k]))return false;
  if(c.mat&&mat(b).k!==c.mat)return false;const a=num(b.prixAchat);if(c.pmin!==''&&!(a!=null&&a>=num(c.pmin)))return false;if(c.pmax!==''&&!(a!=null&&a<=num(c.pmax)))return false;if(c.qmin!==''&&bq(b)<(num(c.qmin)||0))return false;return true})}
-function lastNote(b){const l=S.tastings.filter(t=>t.note!=null&&(t.bottleId===b.id||(t.snap&&norm(t.snap.domaine)===norm(b.domaine)&&String(t.snap.millesime||'')===String(b.millesime||'')))).sort((a,c)=>(c.date||'').localeCompare(a.date||''));return l[0]?l[0].note:null}
+const tastingsOf=b=>S.tastings.filter(t=>t.bottleId===b.id||(t.snap&&norm(t.snap.domaine)===norm(b.domaine)&&String(t.snap.millesime||'')===String(b.millesime||'')&&norm(t.snap.cuvee||'')===norm(b.cuvee||''))).sort((a,c)=>(c.date||'').localeCompare(a.date||''));
+function lastNote(b){const l=tastingsOf(b).filter(t=>t.note!=null&&t.note!=='');return l[0]?l[0].note:null}
+const RACH=[['Je rachète','yes'],['À regoûter avant de décider','mid'],['Je ne rachète pas','no']];
+const verdictTag=t=>{const r=t&&t.rachat?RACH.find(x=>x[0]===t.rachat):null;return r?`<span class="vd ${r[1]}">${r[1]==='yes'?'♥ ':''}${esc(r[0])}</span>`:''};
+const lastVerdict=b=>{const l=tastingsOf(b).find(t=>t.rachat);return l||null};
 function miniGauge(b){const f=num(b.gardeFrom),t=num(b.gardeTo);if(f==null||t==null)return'';const y0=Math.min(f,YEAR)-1,y1=Math.max(t,YEAR)+1,x=y=>((y-y0)/(y1-y0)*100).toFixed(1)+'%',k=mat(b).k;return`<div class="gauge" aria-hidden="true"><i style="left:${x(f)};width:${((t-f)/(y1-y0)*100).toFixed(1)}%;background:var(${MAT[k][1]})"></i><b style="left:${x(YEAR)}"></b></div><span class="gl">${f} – ${t}</span>`}
 const tile=b=>{const m=mat(b),u=uval(b),n=lastNote(b);return`<article class="tile" data-act="open" data-id="${b.id}" tabindex="0" role="button" aria-label="${esc(b.domaine)} ${esc(b.millesime)}"><div class="tv">${visual(b)}${b.fictive?'<span class="fic">Exemple fictif</span>':''}${n!=null?`<span class="score" title="Ma note">${n}</span>`:''}</div><div class="tb"><h3>${esc(b.domaine)||'Domaine non renseigné'}</h3><p class="cu">${esc(b.cuvee)}</p><p class="ap">${esc(b.appellation)}${b.millesime?' · '+esc(b.millesime):''}</p><div class="meta"><span>${bq(b)} × ${esc(b.format||'75 cl')}</span><span>${u?eur(u.v):'—'}</span></div><span class="tag" style="--c:var(${MAT[m.k][1]})">${MAT[m.k][0]}</span>${miniGauge(b)}</div></article>`};
 const byDom=(a,b)=>String(a.domaine).localeCompare(String(b.domaine),'fr')||(num(a.millesime)||0)-(num(b.millesime)||0);
@@ -345,17 +464,23 @@ function gardeBar(b){const f=num(b.gardeFrom),t=num(b.gardeTo);if(f==null||t==nu
  return`<div class="gb" aria-label="Fenêtre de dégustation"><div class="w" style="left:${x(f)};width:${((t-f)/(y1-y0)*100).toFixed(2)}%"></div>${p?`<div class="pk" style="left:${x(p.a)}"></div><small style="left:${x(p.a)};color:var(--ac)">apogée ${p.a}${p.est?' (estimée)':''}</small>`:''}<div class="nw" style="left:${x(YEAR)}"></div><small style="left:${x(YEAR)};top:-26px">${YEAR}</small></div>`}
 function spark(h){h=(h||[]).filter(x=>num(x.v)!=null).sort((a,b)=>a.date.localeCompare(b.date));if(h.length<2)return'<span class="nr">Historique à constituer (une valeur par mise à jour).</span>';const W=300,H=60,mn=Math.min(...h.map(x=>x.v)),mx=Math.max(...h.map(x=>x.v)),r=mx-mn||1,pts=h.map((x,i)=>[8+i/(h.length-1)*(W-16),H-8-(x.v-mn)/r*(H-16)]);
  return`<svg class="chart" viewBox="0 0 ${W} ${H}" width="300" height="60" role="img" aria-label="Évolution de valeur"><polyline points="${pts.map(p=>p.join(',')).join(' ')}" fill="none" stroke="var(--ac)" stroke-width="1.6"/>${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="${i===pts.length-1?3.5:2}" fill="var(--ac)"/>`).join('')}</svg><span class="src">${fdate(h[0].date)} : ${eur(h[0].v)} → ${fdate(h[h.length-1].date)} : ${eur(h[h.length-1].v)}</span>`}
+function avisBlock(b){const l=tastingsOf(b),v=lastVerdict(b),last=l[0];
+ if(!last)return`<div class="avis"><h4>Mon avis</h4><p class="empty">Pas encore dégusté. Ouvrez la bouteille ou créez une fiche pour garder votre avis.</p><div class="row"><button class="btn sm" data-act="newtasting" data-id="${b.id}">Remplir une fiche de dégustation</button></div></div>`;
+ return`<div class="avis"><h4>Mon avis</h4><div class="row">${v?verdictTag(v):'<span class="vd">Verdict non renseigné</span>'}${last.prixjuge?`<span class="vd">${esc(last.prixjuge)}</span>`:''}<span class="src">${l.length} dégustation${l.length>1?'s':''} · dernière le ${fdate(last.date)}</span></div>${last.texte?`<q>${esc(last.texte.slice(0,220))}</q>`:''}<div class="row"><button class="btn ghost sm" data-act="tview" data-id="${last.id}">Relire ma fiche</button><button class="btn ghost sm" data-act="newtasting" data-id="${b.id}">Nouvelle fiche</button></div></div>`}
 function passeport(b){const m=mat(b),u=uval(b),p=peak(b),a=num(b.prixAchat),q=bq(b),ac=accords(b),mil=num(b.millesime),gt=num(b.gardeTo);
  const vrow=t=>{const x=b.val&&b.val[t];return[VT[t],x&&num(x.v)!=null?`${eur(num(x.v))} <span class="src">${x.date?fdate(x.date):'date non renseignée'} · ${x.src?esc(x.src):'source non renseignée'}</span>`:'']};
  return`<div class="pp"><button class="x" data-act="closeSheet">Fermer</button><div class="ppl"><div class="stage">${visual(b)}</div><label class="btn ghost sm" style="background:var(--bg)">${P[b.photo]?'Remplacer la photo':'Ajouter la photo réelle'}<input type="file" accept="image/*" hidden data-in="bphoto" data-id="${b.id}"></label>${b.fictive?'<p class="note" style="color:#252525">Bouteille d’exemple fictive : toutes les données sont inventées pour la démonstration.</p>':''}</div>
 <div class="ppr"><p class="sub" style="margin:0">${esc(b.region)}${b.region&&b.couleur?' · ':''}${esc(b.couleur)}</p><h1>${esc(b.domaine)||'Domaine non renseigné'}</h1>${b.cuvee?`<p class="cuv">${esc(b.cuvee)}</p>`:''}<p class="appn">${esc(b.appellation)}${b.millesime?`<b>${esc(b.millesime)}</b>`:''}</p><div class="row" style="margin-top:12px"><span class="tag" style="--c:var(${MAT[m.k][1]})">${MAT[m.k][0]}</span><span class="tag">${q} × ${esc(b.format||'75 cl')}</span>${lastNote(b)!=null?`<span class="big-score" title="Ma dernière note sur 100">${lastNote(b)}</span>`:''}</div>
+${avisBlock(b)}
 ${sec('Identité',[['Domaine',esc(b.domaine)],['Cuvée',esc(b.cuvee)],['Appellation',esc(b.appellation)],['Millésime',esc(b.millesime)],['Cépages',esc(b.cepages)],['Classification',esc(b.classification)],['Terroir',esc(b.terroir)],['Producteur',esc(b.producteur)]])}
 ${sec('Ma collection',[['Quantité',`${q} × ${esc(b.format||'75 cl')}`],['Date d’achat',b.dateAchat?fdate(b.dateAchat):''],['Prix payé',a!=null?`${eur(a)} par bouteille${q?` <span class="src">${eur(a*q)} pour ${q} bt</span>`:''}`:''],['Provenance',esc(b.provenance)],['État de conservation',esc(b.conservation)],['Emplacement',esc(b.emplacement)],['Notes personnelles',esc(b.notes).replace(/\n/g,'<br>')]])}
 ${sec('Valorisation',[['Prix d’achat',a!=null?eur(a):''],vrow('marchand'),vrow('enchere'),vrow('revente'),['Plus-value potentielle',u&&a!=null?`<b class="${u.v>=a?'pos':'neg'}">${eur((u.v-a)*q)} (${pc((u.v/a-1)*100)})</b> <span class="src">sur ${VT[u.t].toLowerCase()}, hors frais et fiscalité</span>`:''],['Évolution',spark(b.hist)]])}<p class="note">Trois valeurs distinctes : le prix marchand est un prix affiché, le résultat d’enchères un prix réellement payé à une date donnée, la valeur de revente réaliste ce que vous obtiendriez après frais. Seule la valeur saisie ou importée est affichée.</p>
+${b.ai?`<p class="note">Informations de dégustation, de garde et de service complétées par Claude le ${fdate(b.ai.date)} à partir de connaissances générales : à vérifier. Aucun prix n’est estimé automatiquement.</p>`:''}
 ${sec('Dégustation',[['Profil aromatique',esc(b.aromes)],['Structure',esc(b.structure)],['Acidité',esc(b.acidite)],['Tanins',esc(b.tanins)],['Longueur',esc(b.longueur)],['Potentiel d’évolution',esc(b.evolution)]])}
 <section><h4>Garde</h4>${gardeBar(b)}<dl style="margin-top:34px"><div><dt>Fenêtre de dégustation</dt><dd>${b.gardeFrom||b.gardeTo?`${b.gardeFrom||'?'} → ${b.gardeTo||'?'} <span class="src">estimation, dépend du stockage</span>`:nr}</dd></div><div><dt>Année d’apogée</dt><dd>${p?p.a+(p.est?' <span class="src">estimée au milieu de la fenêtre</span>':''):nr}</dd></div><div><dt>Potentiel de vieillissement</dt><dd>${mil&&gt?`${gt-mil} ans depuis la récolte <span class="src">calculé : fin de fenêtre − millésime</span>`:nr}</dd></div><div><dt>Niveau de maturité</dt><dd>${MAT[m.k][0]} <span class="src">en ${YEAR}</span></dd></div></dl></section>
 <section><h4>Service</h4><dl>${service(b).map(([k,x])=>`<div><dt>${k}</dt><dd>${esc(x.v)}${x.own?'':' <span class="src">repère général LBC</span>'}</dd></div>`).join('')}</dl></section>
 <section><h4>Gastronomie</h4>${ac.u.length?`<p class="subh">Vos accords</p>${li(ac.u)}`:''}<p class="subh">Classiques</p>${li(ac.c)}<p class="subh">Gastronomiques</p>${li(ac.g)}<p class="subh">Pâtisserie</p>${li(ac.p)}<p class="note">Suggestions fondées sur les principes classiques d’accord pour ce type de vin, à confirmer à la dégustation.</p></section>
+<section id="mesdeg"><h4>Mes dégustations</h4>${tastingsOf(b).length?`<div class="tsec">${tastingsOf(b).map(t=>`<div class="tmini" data-act="tview" data-id="${t.id}" role="button" tabindex="0"><b>${t.note!=null&&t.note!==''?t.note:'·'}</b><div class="grow"><strong>${fdate(t.date)}</strong>${t.occasion?` · ${esc(t.occasion)}`:''}<small>${esc((t.texte||t.aromes||'').slice(0,110))||'Aucun commentaire'}</small></div>${verdictTag(t)}</div>`).join('')}</div>`:'<p class="note" style="margin:8px 0 12px">Aucune fiche pour ce vin. Notez ce que vous en pensez pour le retrouver au moment de le racheter.</p>'}<button class="btn ghost sm" style="margin:12px 0 6px" data-act="newtasting" data-id="${b.id}">+ Fiche de dégustation</button><p class="note" style="margin:6px 0 0">Cette fiche n’enlève aucune bouteille de la cave. « Ouvrir cette bouteille » en décompte une et ouvre la fiche aussitôt.</p></section>
 <div class="actions"><button class="btn" data-act="drink" data-id="${b.id}">Ouvrir cette bouteille</button><button class="btn ghost" data-act="edit" data-id="${b.id}">Modifier</button><button class="btn ghost" data-act="tostudio" data-id="${b.id}">Studio LBC</button><button class="btn ghost" data-act="remind" data-id="${b.id}">Rappel</button><button class="btn danger" data-act="del" data-id="${b.id}">Supprimer</button></div></div></div>`}
 function openSheet(id){const b=byId(id);if(!b)return;sheetId=id;const s=$('#sheet');s.innerHTML=passeport(b);s.classList.add('on');s.scrollTop=0;document.body.style.overflow='hidden'}
 function closeSheet(){sheetId=null;$('#sheet').classList.remove('on');document.body.style.overflow='';if(V==='collection')renderCBody()}
@@ -379,13 +504,75 @@ const BF=[['Identité',[['domaine','Domaine / château','dl'],['cuvee','Cuvée',
 const dls=()=>['domaine','appellation','region'].map(k=>`<datalist id="dl_${k}">${uniq(k).map(x=>`<option value="${esc(x)}">`).join('')}</datalist>`).join('');
 let pend=null;/* {photo, wishId} */
 function bottleForm(b,isNew,pre){pend={photo:null,wishId:pre&&pre._wish||null};const o=b||{quantite:1,format:'75 cl',couleur:'rouge'};
- modal(`<h2>${isNew?'Ajouter une bouteille':'Modifier la bouteille'}</h2>${isNew?`<div class="cam"><div><b>Photographier l’étiquette</b><p class="sub" style="margin:2px 0 8px">Claude lit le domaine, la cuvée et le millésime, puis vous confirmez.</p><label class="btn sm">Prendre une photo<input type="file" accept="image/*" capture="environment" hidden data-in="label"></label> <label class="btn ghost sm">Choisir dans les photos<input type="file" accept="image/*" hidden data-in="label"></label></div><div id="camprev"></div></div>`:''}<div id="bform">${BF.map(([t,f])=>`<fieldset><legend>${t}</legend><div class="fg2">${f.map(x=>fld(x,o)).join('')}</div></fieldset>`).join('')}${dls()}</div><div id="dupzone"></div><div class="mfoot"><button class="btn ghost" data-act="mclose">Annuler</button><button class="btn" data-act="bsave" data-id="${b&&b.id||''}">Enregistrer</button></div>`)}
-async function recognize(file){const prev=$('#camprev');try{const url=await resize(file,1100);pend.photo=url;prev.innerHTML=`<img src="${url}" alt="Étiquette">`;
- const sm=window.claude&&await window.claude.use('sample');if(!sm){prev.insertAdjacentHTML('beforeend','<p class="note">Reconnaissance indisponible ici : complétez les champs. La photo sera conservée.</p>');return}
- prev.insertAdjacentHTML('beforeend','<p class="note" id="recmsg">Lecture de l’étiquette…</p>');
- const r=await sm.json('Tu lis l’étiquette d’une bouteille de vin sur la photo. Réponds uniquement par un objet JSON avec ces clés : domaine, cuvee, appellation, millesime (nombre), region, couleur (rouge, blanc, rosé, effervescent ou liquoreux). N’invente rien : si une information n’est pas lisible sur l’étiquette, mets une chaîne vide.',{images:[d2b(url)],modelTier:'quick'});
- const set=(k,v)=>{const e=$(`[data-f="${k}"]`);if(e&&v!==''&&v!=null)e.value=v};['domaine','cuvee','appellation','millesime','region'].forEach(k=>set(k,r[k]));if(COUL.includes(r.couleur))set('couleur',r.couleur);
- $('#recmsg').textContent='Étiquette lue. Vérifiez chaque champ avant d’enregistrer.'}catch(e){const m=$('#recmsg');const t='Lecture automatique impossible ('+(e&&e.code||'erreur')+'). Complétez les champs à la main.';if(m)m.textContent=t;else prev.insertAdjacentHTML('beforeend',`<p class="note">${t}</p>`)}}
+ modal(`<h2>${isNew?'Ajouter une bouteille':'Modifier la bouteille'}</h2>${isNew?`<div class="cam"><div><b>Photographier l’étiquette</b><p class="sub" style="margin:2px 0 8px">Prenez l’étiquette de face, bien éclairée : les champs se remplissent seuls, vous corrigez si besoin puis vous enregistrez.</p><label class="btn sm">Prendre une photo<input type="file" accept="image/*" capture="environment" hidden data-in="label"></label> <label class="btn ghost sm">Choisir dans les photos<input type="file" accept="image/*" hidden data-in="label"></label></div><div id="camprev"></div></div>`:''}<div class="aibar"><button type="button" class="btn sm" data-act="enrich">✦ Compléter la fiche avec Claude</button><span class="src" id="aimsg">Cépages, terroir, garde, service, accords. Remplit seulement les champs vides.</span></div><div id="bform">${BF.map(([t,f])=>`<fieldset><legend>${t}</legend><div class="fg2">${f.map(x=>fld(x,o)).join('')}</div></fieldset>`).join('')}${dls()}</div><div id="dupzone"></div><div class="mfoot"><button class="btn ghost" data-act="mclose">Annuler</button><button class="btn" data-act="bsave" data-id="${b&&b.id||''}">Enregistrer</button></div>`)}
+/* ---------- lecture d'étiquette : IA (service), Claude (aperçu), sinon OCR sur l'appareil ---------- */
+const APP_DB=[['Pauillac','Bordeaux','rouge'],['Saint-Estèphe','Bordeaux','rouge'],['Saint-Julien','Bordeaux','rouge'],['Margaux','Bordeaux','rouge'],['Haut-Médoc','Bordeaux','rouge'],['Médoc','Bordeaux','rouge'],['Moulis','Bordeaux','rouge'],['Listrac','Bordeaux','rouge'],['Pomerol','Bordeaux','rouge'],['Lalande-de-Pomerol','Bordeaux','rouge'],['Saint-Émilion','Bordeaux','rouge'],['Pessac-Léognan','Bordeaux',''],['Graves','Bordeaux',''],['Sauternes','Bordeaux','liquoreux'],['Barsac','Bordeaux','liquoreux'],['Entre-Deux-Mers','Bordeaux','blanc'],['Fronsac','Bordeaux','rouge'],['Côtes de Bourg','Bordeaux','rouge'],['Bordeaux Supérieur','Bordeaux',''],['Bordeaux','Bordeaux',''],
+['Chablis','Bourgogne','blanc'],['Petit Chablis','Bourgogne','blanc'],['Meursault','Bourgogne','blanc'],['Puligny-Montrachet','Bourgogne','blanc'],['Chassagne-Montrachet','Bourgogne',''],['Montrachet','Bourgogne','blanc'],['Corton-Charlemagne','Bourgogne','blanc'],['Corton','Bourgogne','rouge'],['Pernand-Vergelesses','Bourgogne',''],['Savigny-lès-Beaune','Bourgogne',''],['Beaune','Bourgogne',''],['Pommard','Bourgogne','rouge'],['Volnay','Bourgogne','rouge'],['Nuits-Saint-Georges','Bourgogne','rouge'],['Vosne-Romanée','Bourgogne','rouge'],['Chambolle-Musigny','Bourgogne','rouge'],['Morey-Saint-Denis','Bourgogne','rouge'],['Gevrey-Chambertin','Bourgogne','rouge'],['Chambertin','Bourgogne','rouge'],['Clos de Vougeot','Bourgogne','rouge'],['Échezeaux','Bourgogne','rouge'],['Romanée-Conti','Bourgogne','rouge'],['Marsannay','Bourgogne',''],['Fixin','Bourgogne','rouge'],['Mercurey','Bourgogne',''],['Givry','Bourgogne',''],['Rully','Bourgogne',''],['Montagny','Bourgogne','blanc'],['Pouilly-Fuissé','Bourgogne','blanc'],['Saint-Véran','Bourgogne','blanc'],['Mâcon','Bourgogne',''],['Bourgogne','Bourgogne',''],
+['Moulin-à-Vent','Beaujolais','rouge'],['Morgon','Beaujolais','rouge'],['Fleurie','Beaujolais','rouge'],['Brouilly','Beaujolais','rouge'],['Chénas','Beaujolais','rouge'],['Juliénas','Beaujolais','rouge'],['Beaujolais','Beaujolais','rouge'],
+['Champagne','Champagne','effervescent'],['Crémant d’Alsace','Alsace','effervescent'],['Crémant de Bourgogne','Bourgogne','effervescent'],['Crémant de Loire','Loire','effervescent'],['Alsace','Alsace','blanc'],['Gewurztraminer','Alsace','blanc'],['Riesling','Alsace','blanc'],
+['Châteauneuf-du-Pape','Vallée du Rhône',''],['Hermitage','Vallée du Rhône',''],['Crozes-Hermitage','Vallée du Rhône',''],['Saint-Joseph','Vallée du Rhône',''],['Côte-Rôtie','Vallée du Rhône','rouge'],['Condrieu','Vallée du Rhône','blanc'],['Cornas','Vallée du Rhône','rouge'],['Gigondas','Vallée du Rhône','rouge'],['Vacqueyras','Vallée du Rhône',''],['Lirac','Vallée du Rhône',''],['Tavel','Vallée du Rhône','rosé'],['Côtes du Rhône','Vallée du Rhône',''],
+['Sancerre','Loire',''],['Pouilly-Fumé','Loire','blanc'],['Vouvray','Loire','blanc'],['Chinon','Loire','rouge'],['Bourgueil','Loire','rouge'],['Saumur','Loire',''],['Savennières','Loire','blanc'],['Muscadet','Loire','blanc'],['Quincy','Loire','blanc'],
+['Bandol','Provence',''],['Côtes de Provence','Provence','rosé'],['Cassis','Provence',''],['Minervois','Languedoc','rouge'],['Corbières','Languedoc','rouge'],['Faugères','Languedoc','rouge'],['Pic Saint-Loup','Languedoc','rouge'],['Banyuls','Roussillon','liquoreux'],['Jurançon','Sud-Ouest','liquoreux'],['Madiran','Sud-Ouest','rouge'],['Cahors','Sud-Ouest','rouge'],['Bergerac','Sud-Ouest',''],['Arbois','Jura',''],['Château-Chalon','Jura','blanc'],['Savoie','Savoie','']];
+function parseLabel(txt){const raw=String(txt||'').replace(/[|_~«»]/g,' '),lines=raw.split(/\n+/).map(l=>l.replace(/[^\p{L}\p{N}’'’\- .&]/gu,' ').replace(/\s+/g,' ').trim()).filter(l=>l.length>=3),all=norm(raw.replace(/\s+/g,' ')),o={};
+ const cy=new Date().getFullYear(),bad=/fond|since|depuis|etabl|établi|bouteille|embouteill|bottled|recolte le|prix/i;
+ const cands=[];lines.forEach(l=>{const m=l.match(/\b(19[3-9]\d|20[0-3]\d)\b/g);if(m&&!bad.test(l))m.forEach(y=>{if(+y<=cy)cands.push(+y)})});
+ if(cands.length)o.millesime=cands[0];
+ const ap=APP_DB.slice().sort((a,b)=>b[0].length-a[0].length).find(a=>new RegExp('(^|[^a-z])'+norm(a[0]).replace(/[-’']/g,'[-\' ]?')+'([^a-z]|$)').test(all));
+ if(ap){o.appellation=ap[0];o.region=ap[1];if(ap[2])o.couleur=ap[2]}
+ if(!o.couleur){if(/\bbrut\b|extra[- ]brut|blanc de blancs|blanc de noirs|champagne/.test(all))o.couleur='effervescent';else if(/\brose\b/.test(all)&&!/rouge/.test(all))o.couleur='rosé';else if(/\bblanc\b|chardonnay|sauvignon|riesling/.test(all))o.couleur='blanc';else if(/\brouge\b|merlot|cabernet|pinot noir|syrah/.test(all))o.couleur='rouge'}
+ const cl=all.match(/grand cru classe|premier grand cru|grand cru|premier cru|[1l]er cru|2eme cru|deuxieme cru/);if(cl)o.classification=({'grand cru classe':'Grand Cru Classé','premier grand cru':'Premier Grand Cru','grand cru':'Grand Cru','premier cru':'Premier Cru','1er cru':'1er Cru','ler cru':'1er Cru','2eme cru':'2ème Cru','deuxieme cru':'2ème Cru'})[cl[0]];
+ const skip=/appellation|controlee|controlée|mis en|produit|vin de|contient|sulfite|alc|vol\b|\bcl\b|\bml\b|enceinte|grossesse|pregnant|www|\.com|recolte|récolte|propriet|propriét|bouteille|france/i;
+ const nm=l=>norm(l),apn=ap?norm(ap[0]):'~';
+ let dom=lines.find(l=>/^(ch[aâ]teau|domaine|clos|mas|maison|cave|famille|champagne)\b/i.test(l)&&!skip.test(l));
+ if(!dom)dom=lines.find(l=>/\b(ch[aâ]teau|domaine)\b/i.test(l)&&!skip.test(l));
+ if(!dom)dom=lines.find(l=>/[A-Za-zÀ-ÿ]{3,}\s+[A-Za-zÀ-ÿ]{3,}/.test(l)&&!skip.test(l)&&nm(l)!==apn&&!/\d{4}/.test(l));
+ const TC=t=>t.replace(/\b(\d{4})\b/g,'').replace(/\s+/g,' ').trim().toLowerCase().replace(/(^|[\s’'-])([a-zà-ÿ])/g,(m,a,b,i)=>/^(de|des|du|la|le|les|et|d|l|au|aux|en|sur|sous)$/.test(m.trim().replace(/[’'-]/g,'')+'')&&i>0?m:a+b.toUpperCase()).replace(/\b(Des|De|Du|La|Le|Les|Et|Au|Aux|Sur|Sous)\b/g,(m,x,i)=>i>0?m.toLowerCase():m);
+ if(dom)o.domaine=TC(dom);
+ const cu=lines.find(l=>/cuv[ée]e|r[ée]serve|vieilles vignes|prestige|tradition|les |clos /i.test(l)&&l!==dom&&!skip.test(l)&&nm(l)!==apn&&l.length<44);
+ if(cu)o.cuvee=TC(cu);
+ return o}
+let _ocr=null;
+function loadOcr(){return _ocr||(_ocr=new Promise((res,rej)=>{if(window.Tesseract)return res(window.Tesseract);const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';s.onload=()=>res(window.Tesseract);s.onerror=()=>{_ocr=null;rej(new Error('offline'))};document.head.appendChild(s)}))}
+function prepForOcr(url){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>{const k=Math.min(2,2000/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d');x.drawImage(im,0,0,c.width,c.height);const d=x.getImageData(0,0,c.width,c.height),p=d.data;let lo=255,hi=0;for(let i=0;i<p.length;i+=4){const g=.3*p[i]+.59*p[i+1]+.11*p[i+2];p[i]=p[i+1]=p[i+2]=g;if(g<lo)lo=g;if(g>hi)hi=g}const r=Math.max(40,hi-lo);for(let i=0;i<p.length;i+=4){const v=Math.max(0,Math.min(255,(p[i]-lo)*255/r));p[i]=p[i+1]=p[i+2]=v}x.putImageData(d,0,0);res(c.toDataURL('image/png'))};im.onerror=rej;im.src=url})}
+const fillLabel=(r,how)=>{const set=(k,v)=>{const e=$(`[data-f="${k}"]`);if(e&&v!==''&&v!=null&&!e.value){e.value=v;e.classList.add('auto')}};['domaine','cuvee','appellation','millesime','region','classification','cepages'].forEach(k=>set(k,r[k]));if(r.couleur&&COUL.includes(r.couleur)){const e=$('[data-f="couleur"]');if(e){e.value=r.couleur;e.classList.add('auto')}}
+ const n=document.querySelectorAll('#bform .auto').length;const m=$('#recmsg');if(m)m.innerHTML=n?`<b>${n} champ${n>1?'s':''} pré-rempli${n>1?'s':''}</b> ${how}. Les champs surlignés sont à vérifier : corrigez ce qui est faux, puis enregistrez.`:`Aucune information fiable n’a été lue. Prenez la photo de face, bien éclairée, ou complétez à la main.`;const f=$('#bform');if(n&&f)f.scrollIntoView({behavior:'smooth',block:'start'})};
+async function recognize(file){const prev=$('#camprev');
+ const say=t=>{let m=$('#recmsg');if(!m){prev.insertAdjacentHTML('beforeend','<p class="note" id="recmsg"></p>');m=$('#recmsg')}m.innerHTML=t};
+ try{const url=await resize(file,1500);pend.photo=url;prev.innerHTML=`<img src="${url}" alt="Étiquette">`;document.querySelectorAll('#bform .auto').forEach(e=>e.classList.remove('auto'));
+  const PR='Tu lis l’étiquette d’une bouteille de vin sur la photo. Réponds uniquement par un objet JSON avec ces clés : domaine, cuvee, appellation, millesime (nombre), region, couleur (rouge, blanc, rosé, effervescent ou liquoreux), classification, cepages. N’invente rien : si une information n’est pas lisible sur l’étiquette, mets une chaîne vide.';
+  const J=t=>{const m=String(t).match(/\{[\s\S]*\}/);return m?JSON.parse(m[0]):{}};
+  if(AI_ENDPOINT){say('Lecture de l’étiquette par l’IA…');try{const r=await aiFetch({task:'label',prompt:PR,image:url.split(',')[1]});if(r.ok){const j=await r.json();const o=J(j.text);fillLabel(o,'par l’IA');enrich(true);return}}catch(e){}}
+  const sm=window.claude&&await window.claude.use('sample');
+  if(sm){say('Lecture de l’étiquette…');try{const o=await sm.json(PR,{images:[d2b(url)],modelTier:'quick'});fillLabel(o,'par Claude');enrich(true);return}catch(e){}}
+  say('Lecture de l’étiquette sur votre appareil… <span id="ocrp">préparation</span>');
+  const T=await loadOcr();const img=await prepForOcr(url);
+  const wk=await T.createWorker('fra',1,{logger:m=>{const e=$('#ocrp');if(e&&m.progress!=null)e.textContent=({'loading tesseract core':'chargement du moteur','loading language traineddata':'téléchargement de la langue (une seule fois)','initializing api':'préparation','recognizing text':'lecture '+Math.round(m.progress*100)+' %'})[m.status]||''}});
+  const out=await wk.recognize(img);await wk.terminate();
+  const o=parseLabel(out.data.text);fillLabel(o,'par lecture automatique');
+ }catch(e){const t='Lecture automatique impossible'+(e&&e.message==='offline'?' (connexion nécessaire la première fois)':'')+'. Complétez les champs à la main : la photo est conservée.';const m=$('#recmsg');if(m)m.textContent=t;else prev.insertAdjacentHTML('beforeend',`<p class="note">${t}</p>`)}}
+/* ---------- compléter la fiche (connaissances de Claude, jamais de prix) ---------- */
+const ENR_KEYS=['cepages','classification','terroir','producteur','aromes','structure','acidite','tanins','longueur','evolution','servTemp','servAer','servCar','servVerre'];
+async function aiJSON(prompt,image){
+ if(AI_ENDPOINT){try{const r=await aiFetch({task:image?'label':'enrich',prompt,image:image||undefined});if(r.ok){const j=await r.json(),m=String(j.text||'').match(/\{[\s\S]*\}/);if(m)return{o:JSON.parse(m[0]),how:'par le service IA'}}}catch(e){}}
+ const sm=window.claude&&await window.claude.use('sample');
+ if(sm){const o=await sm.json(prompt,image?{images:[d2b('data:image/jpeg;base64,'+image)],modelTier:'quick'}:{modelTier:'default'});return{o,how:'par Claude'}}
+ return null}
+async function enrich(auto){const root=$('#bform');if(!root)return;const m=$('#aimsg'),b=readForm(root,{});
+ if(!b.domaine&&!b.appellation&&!b.cuvee){if(m)m.textContent='Renseignez d’abord le domaine ou l’appellation (ou prenez l’étiquette en photo).';return}
+ if(m)m.textContent='Recherche des informations sur ce vin…';
+ const id=[b.domaine,b.cuvee,b.appellation,b.millesime,b.couleur,b.region].filter(Boolean).join(' · ');
+ const P=`Tu es sommelier. Vin à documenter : ${id}.
+Complète sa fiche avec des informations propres à CE producteur et CE millésime. Règles strictes : réponds uniquement par un objet JSON ; si tu n’es pas raisonnablement sûr d’une information, mets une chaîne vide plutôt que de deviner ; n’indique AUCUN prix ni cote ; les années de garde sont des estimations prudentes. Clés : cepages (ex. "Pinot noir 100 %"), classification, terroir (sol, exposition, courte), producteur, aromes (profil aromatique), structure, acidite, tanins, longueur, evolution (potentiel d’évolution en une phrase), gardeFrom (année), gardeTo (année), apogee (année), servTemp (ex. "15-16 °C"), servAer (ex. "30 min"), servCar (oui/non et durée), servVerre (type de verre), accords (liste de 4 à 6 plats précis, un par élément). Valeurs courtes, moins de 110 caractères.`;
+ try{const r=await aiJSON(P);if(!r){if(m)m.textContent='Cette fonction demande Claude : elle marche dans le lien Claude de l’app, ou ici après avoir branché le service IA (voir LISEZMOI). En attendant, remplissez à la main.';return}
+  const o=r.o||{};let n=0;const put=(k,v)=>{const e=$(`#bform [data-f="${k}"]`);if(!e||e.value||v===''||v==null)return;e.value=String(v).slice(0,k==='accords'?400:160);e.classList.add('est');n++};
+  ENR_KEYS.forEach(k=>put(k,o[k]));
+  const y=x=>{x=+x;return x>=1900&&x<=2120?x:null},a=y(o.gardeFrom),z=y(o.gardeTo),pk=y(o.apogee);
+  if(a&&z&&a<=z&&(!pk||(pk>=a&&pk<=z))){put('gardeFrom',a);put('gardeTo',z);if(pk)put('apogee',pk)}
+  const ac=Array.isArray(o.accords)?o.accords.filter(Boolean).slice(0,6).join('\n'):String(o.accords||'');put('accords',ac);
+  pend.ai=n?{date:TODAY,how:r.how}:null;
+  if(m)m.innerHTML=n?`<b>${n} champ${n>1?'s':''} proposé${n>1?'s':''}</b> ${r.how} (lignes en pointillés). Ce sont des repères généraux, à vérifier. Aucun prix n’est estimé : saisissez-les vous-même.`:'Rien de fiable à ajouter pour ce vin : complétez à la main.';
+  if(n&&!auto){const f=$('#bform .est');if(f)f.scrollIntoView({behavior:'smooth',block:'center'})}
+ }catch(e){if(m)m.textContent='Recherche impossible pour le moment ('+((e&&e.code)||'erreur')+'). Complétez à la main.'}}
 const dupKey=b=>norm(b.domaine)+'|'+norm(b.cuvee)+'|'+(b.millesime||'')+'|'+(b.format||'75 cl');
 function commitBottle(o,isNew,merge){const old=byId(o.id);
  if(isNew){if(merge){const d=S.bottles.find(x=>dupKey(x)===dupKey(o));d.quantite=bq(d)+bq(o);if(pend.photo&&!d.photo){d.photo='b_'+d.id;setPhoto(d.photo,pend.photo)}toast('Quantité ajoutée à la fiche existante')}
@@ -396,17 +583,20 @@ function commitBottle(o,isNew,merge){const old=byId(o.id);
  touchSnap();save();closeModal();if(sheetId)refreshSheet();render()}
 
 /* ---------- ouvrir une bouteille + carnet ---------- */
-const TF=[['date','Date','date'],['occasion','Occasion','text'],['personnes','Personnes présentes','text'],['plat','Plat associé','text'],['temp','Température de service','text'],['aeration','Aération / carafage','text'],['note','Note personnelle sur 100 (facultative)','number'],['aromes','Arômes perçus','text'],['texte','Commentaire libre','area']];
+const TF=[['date','Date','date'],['occasion','Occasion','text'],['personnes','Personnes présentes','text'],['plat','Plat associé','text'],['temp','Température de service','text'],['aeration','Aération / carafage','text']];
+const TF2=[['robe','Œil : robe, couleur','text'],['nez','Nez : arômes perçus','text'],['bouche','Bouche : attaque, structure, tanins','text'],['finale','Finale : longueur, persistance','text']];
+const PRIX=['Excellent rapport qualité-prix','Prix correct','Trop cher pour ce que c’est'];
+const chips=(f,lab,opts,v,cls)=>`<div class="fld wide"><label>${lab}</label><div class="bub">${opts.map((o,i)=>{const t=Array.isArray(o)?o[0]:o,c=Array.isArray(o)?o[1]:'';return`<button type="button" class="pill ${c} ${v===t?'on':''}" data-act="chip" data-ff="${f}" data-v="${esc(t)}">${c==='yes'?'♥ ':''}${esc(t)}</button>`}).join('')}</div><input type="hidden" data-f="${f}" id="chip_${f}" value="${esc(v||'')}"></div>`;
 let tph=[];
-function tastingForm(id){const t=S.tastings.find(x=>x.id===id);tph=(t.photos||[]).slice();const s=t.snap||{};
- modal(`<h2>Fiche de dégustation</h2><p class="sub" style="margin:-8px 0 16px">${esc(s.domaine)||'Bouteille libre'} ${esc(s.cuvee)} ${esc(s.millesime)}</p><div id="tform"><div class="fg2"><div class="fld"><label for="t_dom">Domaine</label><input id="t_dom" type="text" data-snap="domaine" value="${esc(s.domaine)}"></div><div class="fld"><label for="t_cu">Cuvée / appellation</label><input id="t_cu" type="text" data-snap="cuvee" value="${esc(s.cuvee||s.appellation)}"></div><div class="fld"><label for="t_mi">Millésime</label><input id="t_mi" type="text" data-snap="millesime" value="${esc(s.millesime)}"></div>${TF.map(x=>fld(x,t,'t')).join('')}</div><div class="fld" style="margin-top:14px"><label>Photographies</label><div class="ph-row" id="tph">${tph.map(k=>`<img src="${P[k]||''}" alt="">`).join('')}</div><label class="btn ghost sm" style="margin-top:8px;align-self:flex-start">Ajouter des photos<input type="file" accept="image/*" multiple hidden data-in="tphotos"></label></div></div><div class="mfoot"><button class="btn danger" data-act="tdel" data-id="${id}">Supprimer</button><button class="btn ghost" data-act="mclose">Plus tard</button><button class="btn" data-act="tsave" data-id="${id}">Enregistrer</button></div>`)}
+function tastingForm(id,fresh){const t=S.tastings.find(x=>x.id===id);tph=(t.photos||[]).slice();const s=t.snap||{};
+ modal(`<h2>Fiche de dégustation</h2><p class="sub" style="margin:-8px 0 6px">${esc(s.domaine)||'Bouteille libre'} ${esc(s.cuvee)} ${esc(s.millesime)}</p>${fresh?'<p class="tfoot-note">Une bouteille a été décomptée de la cave. Prenez votre temps : vous pouvez fermer et reprendre cette fiche plus tard depuis la bouteille ou le carnet.</p>':''}<div id="tform"><div class="fg2">${chips('rachat','Le rachèterais-je ?',RACH,t.rachat)}<div class="fld"><label for="t_note">Ma note sur 100 (facultative)</label><input id="t_note" data-f="note" data-t="number" type="text" inputmode="decimal" value="${esc(t.note==null?'':t.note)}"></div>${chips('prixjuge','Rapport qualité-prix',PRIX,t.prixjuge)}<div class="subtle">Dégustation</div>${TF2.map(x=>fld(x,t,'t')).join('')}<div class="fld wide"><label for="t_aromes">Arômes dominants</label><input id="t_aromes" data-f="aromes" type="text" value="${esc(t.aromes||'')}"></div><div class="fld wide"><label for="t_texte">Mon avis en quelques mots (ce que je veux retenir)</label><textarea id="t_texte" rows="3" data-f="texte">${esc(t.texte||'')}</textarea></div><div class="subtle">Le contexte</div>${TF.map(x=>fld(x,t,'t')).join('')}<div class="subtle">Le vin</div><div class="fld"><label for="t_dom">Domaine</label><input id="t_dom" type="text" data-snap="domaine" value="${esc(s.domaine)}"></div><div class="fld"><label for="t_cu">Cuvée / appellation</label><input id="t_cu" type="text" data-snap="cuvee" value="${esc(s.cuvee||s.appellation)}"></div><div class="fld"><label for="t_mi">Millésime</label><input id="t_mi" type="text" data-snap="millesime" value="${esc(s.millesime)}"></div></div><div class="fld" style="margin-top:14px"><label>Photographies (étiquette, verre, plat)</label><div class="ph-row" id="tph">${tph.map(k=>`<img src="${P[k]||''}" alt="">`).join('')}</div><label class="btn ghost sm" style="margin-top:8px;align-self:flex-start">Ajouter des photos<input type="file" accept="image/*" multiple hidden data-in="tphotos"></label></div></div><div class="mfoot"><button class="btn danger" data-act="tdel" data-id="${id}">Supprimer</button><button class="btn ghost" data-act="mclose">Plus tard</button><button class="btn" data-act="tsave" data-id="${id}">Enregistrer la fiche</button></div>`)}
 function newTasting(){const t={id:uid(),date:TODAY,snap:{}};S.tastings.unshift(t);save();tastingForm(t.id)}
 function tastingView(id){const t=S.tastings.find(x=>x.id===id),s=t.snap||{};
- modal(`<h2>${esc(s.domaine)||'Bouteille libre'} ${esc(s.millesime)}</h2><p class="sub" style="margin:-8px 0 16px">${esc(s.cuvee||s.appellation)}</p><dl>${[['Date',fdate(t.date)],['Occasion',esc(t.occasion)],['Personnes',esc(t.personnes)],['Plat',esc(t.plat)],['Température',esc(t.temp)],['Aération',esc(t.aeration)],['Note',t.note!=null?t.note+' / 100':''],['Arômes',esc(t.aromes)],['Commentaire',esc(t.texte).replace(/\n/g,'<br>')]].map(([k,v])=>`<div><dt>${k}</dt><dd>${v||nr}</dd></div>`).join('')}</dl><div class="ph-row">${(t.photos||[]).map(k=>`<img src="${P[k]||''}" alt="Photo de dégustation">`).join('')}</div><div class="mfoot"><button class="btn ghost" data-act="mclose">Fermer</button><button class="btn" data-act="tedit" data-id="${id}">Modifier</button></div>`)}
-function vCarnet(){const q=norm(CT.q),l=S.tastings.filter(t=>!q||norm(JSON.stringify([t.snap,t.occasion,t.plat,t.personnes,t.texte,t.aromes])).includes(q)).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
- return`<div class="wrap"><div class="head"><div><h1>Carnet de dégustation</h1><p class="sub">${S.tastings.length} dégustation${S.tastings.length>1?'s':''} conservée${S.tastings.length>1?'s':''}, avec ou sans bouteille en cave.</p></div><div class="row"><input class="gs" style="display:block" type="search" placeholder="Rechercher un souvenir" data-in="ctq" data-ev="input" value="${esc(CT.q)}"><button class="btn" data-act="tnew">Nouvelle dégustation</button></div></div><div id="tl">${tlist(l)}</div></div>`}
-const CT={q:''};
-const tlist=l=>l.length?l.map(t=>{const s=t.snap||{},d=t.date?new Date(t.date+'T12:00:00'):null;return`<article class="entry" data-act="tview" data-id="${t.id}" tabindex="0" role="button"><div class="d"><b>${d?d.getDate():'—'}</b><span>${d?d.toLocaleDateString('fr-FR',{month:'long',year:'numeric'}):''}</span></div><div><h3>${esc(s.domaine)||'Bouteille libre'} ${esc(s.millesime)}</h3><p>${esc(s.cuvee||s.appellation)}${t.fictive?' · exemple fictif':''}</p>${t.plat||t.occasion?`<p>${esc([t.occasion,t.plat].filter(Boolean).join(' · '))}</p>`:''}${t.texte?`<p>${esc(t.texte.slice(0,140))}</p>`:''}</div><div class="score">${t.note!=null?`${t.note}<small>/ 100</small>`:''}</div></article>`}).join(''):`<div class="card"><h2>Aucune dégustation</h2><p class="sub">Elles s’ajoutent quand vous ouvrez une bouteille depuis sa fiche, ou à la main.</p></div>`;
+ modal(`<h2>${esc(s.domaine)||'Bouteille libre'} ${esc(s.millesime)}</h2><p class="sub" style="margin:-8px 0 14px">${esc(s.cuvee||s.appellation)}</p><div class="row" style="margin-bottom:14px">${verdictTag(t)}${t.prixjuge?`<span class="vd">${esc(t.prixjuge)}</span>`:''}${t.note!=null&&t.note!==''?`<span class="big-score" style="width:56px;height:56px;font-size:24px" title="Note sur 100">${t.note}</span>`:''}</div>${t.texte?`<div class="avis" style="margin:0 0 16px"><q>${esc(t.texte).replace(/\n/g,'<br>')}</q></div>`:''}<dl>${[['Date',fdate(t.date)],['Œil',esc(t.robe)],['Nez',esc(t.nez)],['Bouche',esc(t.bouche)],['Finale',esc(t.finale)],['Arômes',esc(t.aromes)],['Occasion',esc(t.occasion)],['Personnes',esc(t.personnes)],['Plat',esc(t.plat)],['Température',esc(t.temp)],['Aération',esc(t.aeration)]].map(([k,v])=>`<div><dt>${k}</dt><dd>${v||nr}</dd></div>`).join('')}</dl><div class="ph-row">${(t.photos||[]).map(k=>`<img src="${P[k]||''}" alt="Photo de dégustation">`).join('')}</div><div class="mfoot"><button class="btn ghost" data-act="mclose">Fermer</button><button class="btn" data-act="tedit" data-id="${id}">Modifier</button></div>`)}
+function vCarnet(){const q=norm(CT.q),l=S.tastings.filter(t=>(!CT.v||t.rachat===CT.v)&&(!q||norm(JSON.stringify([t.snap,t.occasion,t.plat,t.personnes,t.texte,t.aromes])).includes(q))).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+ return`<div class="wrap"><div class="head"><div><h1>Carnet de dégustation</h1><p class="sub">${S.tastings.length} dégustation${S.tastings.length>1?'s':''} conservée${S.tastings.length>1?'s':''}, avec ou sans bouteille en cave.</p></div><div class="row"><input class="gs" style="display:block" type="search" placeholder="Rechercher un souvenir" data-in="ctq" data-ev="input" value="${esc(CT.q)}"><button class="btn" data-act="tnew">Nouvelle dégustation</button></div></div><div class="qf" style="margin:0 0 18px"><button class="${!CT.v?'on':''}" data-act="cv" data-v="">Toutes</button>${RACH.map(r=>`<button class="${CT.v===r[0]?'on':''}" data-act="cv" data-v="${esc(r[0])}">${r[0]}</button>`).join('')}</div><div id="tl">${tlist(l)}</div></div>`}
+const CT={q:'',v:''};
+const tlist=l=>l.length?l.map(t=>{const s=t.snap||{},d=t.date?new Date(t.date+'T12:00:00'):null;return`<article class="entry" data-act="tview" data-id="${t.id}" tabindex="0" role="button"><div class="d"><b>${d?d.getDate():'—'}</b><span>${d?d.toLocaleDateString('fr-FR',{month:'long',year:'numeric'}):''}</span></div><div><h3>${esc(s.domaine)||'Bouteille libre'} ${esc(s.millesime)}</h3><p>${esc(s.cuvee||s.appellation)}${t.fictive?' · exemple fictif':''}</p>${t.plat||t.occasion?`<p>${esc([t.occasion,t.plat].filter(Boolean).join(' · '))}</p>`:''}${t.texte?`<p>${esc(t.texte.slice(0,140))}</p>`:''}${t.rachat?`<p style="margin-top:8px">${verdictTag(t)}</p>`:''}</div><div class="score">${t.note!=null?`${t.note}<small>/ 100</small>`:''}</div></article>`}).join(''):`<div class="card"><h2>Aucune dégustation</h2><p class="sub">Elles s’ajoutent quand vous ouvrez une bouteille depuis sa fiche, ou à la main.</p></div>`;
 
 /* ---------- valeur ---------- */
 function bars(map,total,unit){const e=Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,8),mx=e[0]?e[0][1]:1;return e.length?`<div class="bars">${e.map(([k,v])=>`<div><span>${esc(k)}</span><span class="bb"><i style="width:${v/mx*100}%"></i></span><span>${unit?eur(v):v+' bt'}</span></div>`).join('')}</div>`:'<p class="nr">Aucune donnée.</p>'}
@@ -460,7 +650,7 @@ async function bottleImg(b){return imgFrom(P[b.photo]||('data:image/svg+xml;char
 function wrapT(x,t,px,py,mw,lh,max=6){const w=String(t).split(/\s+/);let line='',n=0;for(const s of w){const tt=line?line+' '+s:s;if(x.measureText(tt).width>mw&&line){x.fillText(line,px,py);py+=lh;line=s;if(++n>=max)return py}else line=tt}if(line){x.fillText(line,px,py);py+=lh}return py}
 async function drawCard(b,tpl,H,slide){try{await document.fonts.load('500 40px "EB Garamond"');await document.fonts.load('italic 400 40px "EB Garamond"');await document.fonts.load('400 24px "Hanken Grotesk"')}catch(e){}
  const W=1080,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
- const pal={dark:{bg:'#06180f',tx:'#F4E8C8',mu:'#b4b9a2',g:'#C98A4B',ac:'#D9985A'},light:{bg:'#F3EBD8',tx:'#14201a',mu:'#6a6450',g:'#a8692f',ac:'#7d1022'},bord:{bg:'#7d1022',tx:'#F6EBCB',mu:'#e6c9bd',g:'#E0A86B',ac:'#E8B37A'}};
+ const pal={dark:{bg:'#06180f',tx:'#F4E8C8',mu:'#b4b9a2',g:'#C98A4B',ac:'#D9985A'},light:{bg:'#F2EAE0',tx:'#14201a',mu:'#6b5f52',g:'#a8692f',ac:'#7d1022'},bord:{bg:'#7d1022',tx:'#F6EBCB',mu:'#e6c9bd',g:'#E0A86B',ac:'#E8B37A'}};
  const mode=tpl==='millesime'?'bord':(tpl==='domaine'||tpl==='accord'||(tpl==='carrousel'&&slide%2))?'light':'dark',p=pal[mode];
  x.fillStyle=p.bg;x.fillRect(0,0,W,H);x.strokeStyle=p.g;x.lineWidth=2;x.strokeRect(44,44,W-88,H-88);
  const T=(t,px,py,f,col,al='left',ls=0)=>{x.font=f;x.fillStyle=col;x.textAlign=al;try{x.letterSpacing=ls+'px'}catch(e){}x.fillText(t,px,py)};
@@ -501,7 +691,7 @@ const caveJSON=()=>JSON.stringify(S.bottles.filter(b=>bq(b)>0).map(b=>{const u=u
 const SYS='Tu es le sommelier privé de LIÈGE & BONS COPAINS. Réponds en français, avec élégance et précision, en 6 à 10 phrases maximum. Tu ne peux recommander QUE des bouteilles présentes dans la CAVE JSON ci-dessous, avec quantité > 0. Si aucune ne convient, dis-le franchement et indique la plus proche ou le type de vin à chercher. N’invente jamais de bouteille, de prix, de millésime ni de note. Justifie par la maturité, les accords, le service (température, carafage) et la quantité restante. Les fenêtres de garde sont des estimations. Les bouteilles marquées fictive sont des exemples de démonstration.';
 async function askSomm(q){MSG.push({r:'u',t:q});MSG.push({r:'a',t:'…'});drawChat();const i=MSG.length-1;const upd=t=>{MSG[i].t=t;const m=document.querySelectorAll('#chat .msg');if(m.length)m[m.length-1].innerHTML=md(t)};
  const hist=MSG.slice(0,-2).slice(-6).map(m=>(m.r==='u'?'Utilisateur : ':'Sommelier : ')+m.t).join('\n'),prompt=`${SYS}\n\nCAVE JSON :\n${caveJSON()}\n\nÉchanges précédents :\n${hist||'(aucun)'}\n\nQuestion : ${q}`;
- try{if(AI_ENDPOINT){const r=await fetch(AI_ENDPOINT,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({system:SYS,cave:JSON.parse(caveJSON()),history:hist,question:q})});if(!r.ok)throw 0;const j=await r.json();upd(j.text||'…');return}
+ try{if(AI_ENDPOINT){const r=await aiFetch({system:SYS,cave:JSON.parse(caveJSON()),history:hist,question:q});if(!r.ok)throw 0;const j=await r.json();upd(j.text||'…');return}
   const sm=window.claude&&await window.claude.use('sample');if(sm){const r=await sm(prompt,{cache:false,modelTier:'default',onText:({text})=>upd(text)});upd(r.text);return}}catch(e){if(e&&e.code==='not_granted')toast('Accès à Claude refusé : moteur local utilisé')}
  upd(localSomm(q)+'\n\n_Réponse du moteur local : connectez Claude pour des conseils plus fins._'.replace(/_/g,''))}
 const NUMW={un:1,deux:2,trois:3,cinq:5,sept:7,dix:10,quinze:15,vingt:20,trente:30};
@@ -529,10 +719,11 @@ function importQuotes(txt){const rows=parseCSV(txt);let ok=0,ko=0;rows.forEach(r
 function vReglages(){const pers=!!IDB.db;return`<div class="wrap"><div class="head"><div><h1>Réglages</h1><p class="sub">Sauvegarde, import et apparence.</p></div></div>
 <div class="cols"><div class="sec"><h2>Apparence</h2><div class="seg">${[['auto','Automatique'],['light','Clair'],['dark','Sombre']].map(([k,l])=>`<button data-act="theme" data-k="${k}" class="${S.settings.theme===k?'on':''}">${l}</button>`).join('')}</div></div>
 <div class="sec"><h2>Persistance</h2><p>Les données sont enregistrées sur cet appareil (${pers?'base IndexedDB':'stockage limité'}), photos comprises. Dernière sauvegarde locale : <span id="savedat">${S.savedAt?new Date(S.savedAt).toLocaleString('fr-FR'):'—'}</span>.</p><p class="note">Pensez à exporter une sauvegarde JSON régulièrement : effacer les données du navigateur supprimerait la cave.</p></div></div>
+${IG?`<div class="sec"><h2>Liège &amp; Bons Copains</h2><p>Retrouvez les recettes, les accords et les coulisses sur Instagram.</p>${igLink()}</div>`:''}
 <div class="sec"><h2>Sauvegarde et restauration</h2><div class="row"><button class="btn" data-act="xjson">Exporter la sauvegarde (JSON)</button><button class="btn ghost" data-act="xcsv">Exporter l’inventaire (CSV)</button><label class="btn ghost">Restaurer une sauvegarde JSON<input type="file" accept=".json,application/json" hidden data-in="ijson"></label></div></div>
 <div class="sec" id="imp"><h2>Importer</h2><div class="row"><label class="btn ghost">Importer des bouteilles (CSV)<input type="file" accept=".csv,text/csv,text/plain" hidden data-in="icsv"></label><label class="btn ghost">Importer des cotations (CSV)<input type="file" accept=".csv,text/csv,text/plain" hidden data-in="iquote"></label></div><p class="note">Bouteilles : mêmes colonnes que l’export CSV (séparateur point-virgule ou virgule). Cotations : colonnes domaine, cuvee, millesime, type (marchand, enchere ou revente), valeur, date, source. Les doublons (domaine, cuvée, millésime, format) sont fusionnés par addition des quantités.</p></div>
 <div class="sec"><h2>Collection de démonstration</h2><p>${S.bottles.some(b=>b.fictive)||S.tastings.some(t=>t.fictive)||S.wishes.some(w=>w.fictive)?'Des exemples fictifs sont présents.':'Aucun exemple fictif.'}</p><p style="margin-top:10px"><button class="btn danger" data-act="clrdemo">Supprimer tous les exemples fictifs</button></p></div>
-<div class="sec"><h2>Sommelier et service d’IA</h2><p>${AI_ENDPOINT?'Le sommelier passe par votre service sécurisé, sans clé dans le navigateur.':'Dans Claude, le sommelier utilise votre compte. Hors Claude, renseignez AI_ENDPOINT dans config.js : un petit service (fourni dans worker.js) garde la clé d’API côté serveur. Sans service, un moteur local répond à partir de votre cave.'}</p></div></div>`}
+<div class="sec"><h2>Sommelier et service d’IA</h2><p>${AI_ENDPOINT?'Le sommelier passe par votre service sécurisé, sans clé dans le navigateur. Saisissez le code d’accès que l’on vous a donné.':'Dans Claude, le sommelier utilise votre compte. Hors Claude, renseignez AI_ENDPOINT dans config.js : un petit service (fourni dans worker.js) garde la clé d’API côté serveur. Sans service, un moteur local répond à partir de votre cave.'}</p>${AI_ENDPOINT?`<div class="fld" style="max-width:360px;margin-top:10px"><label for="aicode">Code d’accès à l’assistant</label><input id="aicode" type="text" autocomplete="off" autocapitalize="characters" placeholder="Ex. MARIE-7K2" data-in="aicode" data-ev="input" value="${esc(S.settings.aiCode||'')}"></div><p class="note">Ce code est personnel : il ouvre la lecture d’étiquette, la fiche automatique et le sommelier IA. Le reste de l’app fonctionne sans.</p>`:''}</div></div>`}
 function exportJSON(){const photos={};Object.keys(P).forEach(k=>photos[k]=P[k]);return JSON.stringify({app:'lbc-cave-privee',version:1,exported:new Date().toISOString(),state:S,photos})}
 async function restoreJSON(txt){const j=JSON.parse(txt);if(j.app!=='lbc-cave-privee'||!j.state)throw new Error('Fichier non reconnu');S=Object.assign(blank(),j.state);for(const k of Object.keys(P))delPhoto(k);Object.keys(j.photos||{}).forEach(k=>setPhoto(k,j.photos[k]));applyTheme();save()}
 
@@ -543,14 +734,18 @@ const A={
  cview(d){CF.view=d.k;render()},qf(d){CF.couleur='';CF.mat='';if(d.k){const [a,v]=d.k.split(':');CF[a]=v}render()},more(){modal(`<h2>Plus</h2><div class="tpl">${TABS.filter(t=>!['collection','valeur','calendrier','sommelier'].includes(t[0])).map(([k,l])=>`<button data-act="go" data-v="${k}">${l}</button>`).join('')}</div><div class="mfoot"><button class="btn ghost" data-act="mclose">Fermer</button></div>`)},creset(){Object.keys(CF).forEach(k=>{if(k!=='view'&&k!=='q')CF[k]=''});render()},
  open(d){openSheet(d.id)},closeSheet,mclose:closeModal,
  add(){bottleForm(null,true)},edit(d){bottleForm(byId(d.id),false)},
- bsave(d){const root=$('#bform'),o=readForm(root,d.id?byId(d.id):{id:uid()});if(!d.id)o.id=uid();if(!o.domaine&&!o.appellation&&!o.cuvee){toast('Renseignez au moins le domaine ou l’appellation');return}
+ enrich(){enrich(false)},
+ bsave(d){const root=$('#bform'),o=readForm(root,d.id?byId(d.id):{id:uid()});if(!d.id)o.id=uid();if(pend&&pend.ai)o.ai=pend.ai;if(!o.domaine&&!o.appellation&&!o.cuvee){toast('Renseignez au moins le domaine ou l’appellation');return}
   if(!d.id){const dup=S.bottles.find(x=>dupKey(x)===dupKey(o));if(dup&&$('#dupzone').dataset.ok!=='1'){$('#dupzone').innerHTML=`<div class="banner"><b>Cette bouteille est déjà en cave</b> (${bq(dup)} × ${esc(dup.format||'75 cl')}, ${esc(dup.domaine)} ${esc(dup.millesime)}).<div class="row" style="margin-top:8px"><button class="btn sm" data-act="dupmerge">Ajouter à la fiche existante</button><button class="btn ghost sm" data-act="dupnew">Créer une fiche distincte</button></div></div>`;A._o=o;return}}
   commitBottle(o,!d.id,false)},
  dupmerge(){commitBottle(A._o,true,true)},dupnew(){$('#dupzone').dataset.ok='1';commitBottle(A._o,true,false)},
  del:async d=>{const b=byId(d.id),i=await ask('Supprimer cette fiche ?',`${esc(b.domaine)} ${esc(b.millesime)} sera retirée de la cave. Les dégustations déjà notées sont conservées.`,[{t:'Annuler',cls:'ghost'},{t:'Supprimer',cls:'danger'}]);if(i===1){if(b.photo)delPhoto(b.photo);S.bottles=S.bottles.filter(x=>x.id!==d.id);S.reminders=S.reminders.filter(r=>r.bottleId!==d.id);touchSnap();save();closeSheet();render();toast('Fiche supprimée')}},
- drink(d){const b=byId(d.id);if(bq(b)<1){toast('Il ne reste aucune bouteille en cave');return}b.quantite=bq(b)-1;const t={id:uid(),bottleId:b.id,date:TODAY,snap:{domaine:b.domaine,cuvee:b.cuvee,appellation:b.appellation,millesime:b.millesime,couleur:b.couleur,format:b.format},fictive:b.fictive};S.tastings.unshift(t);touchSnap();save();refreshSheet();tastingForm(t.id)},
+ drink(d){const b=byId(d.id);if(bq(b)<1){toast('Il ne reste aucune bouteille en cave');return}b.quantite=bq(b)-1;const t={id:uid(),bottleId:b.id,date:TODAY,snap:{domaine:b.domaine,cuvee:b.cuvee,appellation:b.appellation,millesime:b.millesime,couleur:b.couleur,format:b.format},fictive:b.fictive};S.tastings.unshift(t);touchSnap();save();refreshSheet();tastingForm(t.id,true)},
+ cv(d){CT.v=d.v;render()},
+ chip(d,el){const g=el.parentNode;g.querySelectorAll('.pill').forEach(x=>x.classList.remove('on'));const h=document.getElementById("chip_"+d.ff);if(h.value===d.v){h.value=''}else{h.value=d.v;el.classList.add('on')}},
+ newtasting(d){const b=byId(d.id);const t={id:uid(),bottleId:b.id,date:TODAY,snap:{domaine:b.domaine,cuvee:b.cuvee,appellation:b.appellation,millesime:b.millesime,couleur:b.couleur,format:b.format},fictive:b.fictive};S.tastings.unshift(t);save();tastingForm(t.id)},
  tnew:newTasting,tview(d){tastingView(d.id)},tedit(d){tastingForm(d.id)},
- tsave(d){const t=S.tastings.find(x=>x.id===d.id),o=readForm($('#tform'),t);o.snap=Object.assign({},t.snap);document.querySelectorAll('[data-snap]').forEach(e=>o.snap[e.dataset.snap]=e.value.trim());o.photos=tph;Object.assign(t,o);save();closeModal();if(V==='carnet')render();toast('Dégustation enregistrée')},
+ tsave(d){const t=S.tastings.find(x=>x.id===d.id),o=readForm($('#tform'),t);o.snap=Object.assign({},t.snap);document.querySelectorAll('[data-snap]').forEach(e=>o.snap[e.dataset.snap]=e.value.trim());o.photos=tph;Object.assign(t,o);save();closeModal();if(V==='carnet')render();refreshSheet();toast('Fiche de dégustation enregistrée')},
  tdel:async d=>{const i=await ask('Supprimer la dégustation ?','Ce souvenir sera effacé.',[{t:'Annuler',cls:'ghost'},{t:'Supprimer',cls:'danger'}]);if(i===1){S.tastings=S.tastings.filter(x=>x.id!==d.id);save();if(V==='carnet')render();toast('Dégustation supprimée')}},
  snap(){touchSnap();save();render();toast('Instantané enregistré')},goimport(){goTo('reglages');setTimeout(()=>$('#imp').scrollIntoView(),50)},
  cyear(d){CY=+d.y;render()},
@@ -570,7 +765,7 @@ const A={
 };
 const I={
  gsearch(el){CF.q=el.value;if(V!=='collection'){V='collection';render()}else renderCBody()},
- cf(el){CF[el.dataset.k]=el.value;renderCBody()},ctq(el){CT.q=el.value;$('#tl').innerHTML=tlist(S.tastings.filter(t=>!norm(CT.q)||norm(JSON.stringify([t.snap,t.occasion,t.plat,t.personnes,t.texte,t.aromes])).includes(norm(CT.q))).sort((a,b)=>(b.date||'').localeCompare(a.date||'')))},
+ cf(el){CF[el.dataset.k]=el.value;renderCBody()},aicode(el){S.settings.aiCode=el.value.trim();save()},ctq(el){CT.q=el.value;$('#tl').innerHTML=tlist(S.tastings.filter(t=>(!CT.v||t.rachat===CT.v)&&(!norm(CT.q)||norm(JSON.stringify([t.snap,t.occasion,t.plat,t.personnes,t.texte,t.aromes])).includes(norm(CT.q)))).sort((a,b)=>(b.date||'').localeCompare(a.date||'')))},
  async bphoto(el){const f=el.files[0];if(!f)return;const b=byId(el.dataset.id);setPhoto('b_'+b.id,await resize(f));b.photo='b_'+b.id;save();refreshSheet()},
  label(el){const f=el.files[0];if(f)recognize(f)},
  async tphotos(el){for(const f of el.files){const k='p_'+uid();setPhoto(k,await resize(f,1200));tph.push(k)}$('#tph').innerHTML=tph.map(k=>`<img src="${P[k]||''}" alt="">`).join('')},
@@ -586,7 +781,7 @@ document.addEventListener('submit',e=>{if(e.target.id==='askf'){e.preventDefault
 
 /* ---------- démarrage ---------- */
 (async()=>{document.documentElement.style.setProperty('--paper',uri(NOISESVG));document.documentElement.style.setProperty('--wood',uri(WOODSVG));
- await load();applyTheme();shell();landing();
+ await load();trimDemo();applyTheme();shell();landing();
 })();
 
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
